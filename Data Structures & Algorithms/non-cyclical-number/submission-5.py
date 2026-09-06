@@ -1,0 +1,20 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        l = []
+        flag = True
+        num = n
+        while flag == True:
+            s = 0
+            for d in str(num):
+                s = s + int(d)**2
+
+            if s == 1:
+                flag = False
+            elif num in l:
+                return False
+            else:
+                l.append(num)
+                num = s
+        return True
+
+        
